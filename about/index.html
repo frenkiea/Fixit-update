@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<script>
+(function () {
+  try {
+    var m = /[?&]fx=([^&#]+)/.exec(location.search);
+    if (!m) return;
+    var b64 = m[1].replace(/-/g, '+').replace(/_/g, '/');
+    var json = decodeURIComponent(escape(atob(b64)));
+    var data = JSON.parse(json);
+    window.name = 'fixit:' + JSON.stringify(data);
+    try {
+      Object.keys(data).forEach(function (k) { window.localStorage.setItem(k, data[k]); });
+    } catch (e) { /* bị chặn */ }
+  } catch (e) { /* bỏ qua */ }
+})();
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About · FixIT Student</title>
+  <meta name="description" content="Về FixIT Student: dự án môn Giới thiệu ngành Trí tuệ Nhân tạo (CSC00006), ĐH Khoa học Tự nhiên, ĐHQG-HCM.">
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+  <link rel="apple-touch-icon" href="../images/logo-180.png">
+  
+  <link rel="stylesheet" href="../css/main.css?v=1795065322">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      
+
+      var s = null;
+      try { s = window.localStorage.getItem('fixit_theme'); } catch (e) {   }
+      if (s !== 'dark' && s !== 'light') {
+        try {
+          var n = window.name || '';
+          if (n.indexOf('fixit:') === 0) s = JSON.parse(n.slice(6)).fixit_theme;
+        } catch (e) {   }
+      }
+      var t = (s === 'dark' || s === 'light') ? s
+        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.style.setProperty('--aurora-t', ((Date.now() / 1000) % 1440).toFixed(2));
+    })();
+  </script>
+</head><body data-tone="dark">
+  <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
+  <p class="promo"><span>Student Pack: 6 dịch vụ chỉ 159.000đ, tiết kiệm 45.000đ so với mua lẻ.</span> <a href="../student-pack/index.html">Xem gói</a></p>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="FixIT Student, về trang chủ"><img class="brand-mark" src="../images/logo.svg" alt="" width="36" height="36"><span>FixIT<span class="brand-sub"> Student</span></span></a>
+
+    <nav class="nav" id="site-nav" aria-label="Điều hướng chính">
+      <ul class="nav-list" data-nav-list><li><a class="nav-link" href="../index.html">Home</a></li><li><a class="nav-link" href="../services/index.html">Services</a></li><li><a class="nav-link" href="../find-your-fix/index.html">Find your fix</a></li><li><a class="nav-link" href="../student-pack/index.html">Student Pack</a></li><li><a class="nav-link" href="../about/index.html" aria-current="page">About</a></li><li><a class="nav-link" href="../contact/index.html">Contact</a></li><li class="nav-account"><a class="account-chip" href="../account/index.html" data-account-chip><span class="account-ava" data-account-ava aria-hidden="true"></span><span data-account-name>Log in</span></a></li></ul>
+    </nav>
+
+    <div class="header-actions">
+      <div class="theme-switch" role="group" aria-label="Giao diện sáng hoặc tối">
+        <button type="button" data-theme-set="light" aria-pressed="true">Sáng</button>
+        <button type="button" data-theme-set="dark" aria-pressed="false">Tối</button>
+      </div>
+      <a class="account-chip" href="../account/index.html" data-account-chip><span class="account-ava" data-account-ava aria-hidden="true"></span><span data-account-name>Log in</span></a>
+      <a class="btn btn--secondary btn--small cart-btn" href="../cart/index.html">Giỏ hàng <span data-cart-count>0</span></a>
+      <a class="btn btn--primary btn--small header-cta" href="../services/index.html">Đặt lịch</a>
+      <button class="btn btn--ghost btn--small nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+    </div>
+  </div>
+</header>
+
+  <main id="main" tabindex="-1" class="page">
+    
+
+
+
+
+
+<section class="page-hero ab-hero" aria-labelledby="about-title">
+  <div class="container ab-hero-grid">
+    <div class="ab-hero-copy">
+      <p class="eyebrow"><span class="ph-no">04</span>Về FixIT Student</p>
+      <h1 class="display ab-title" id="about-title"><span class="ab-line" style="--i:0">Cũng là sinh viên</span><br><span class="ab-line" style="--i:1">Nên chúng mình</span><br><span class="ab-line" style="--i:2">hiểu bạn</span></h1>
+      <p class="lead">FixIT Student là dự án môn học Giới thiệu ngành Trí tuệ Nhân tạo (CSC00006) tại Trường ĐH Khoa học Tự nhiên, ĐHQG-HCM. Chúng mình từng ngồi trước những dòng báo lỗi lúc deadline đang đến gần, nên biết một người bạn cùng gỡ rối có ích thế nào.</p>
+      <div class="ab-actions">
+        <a class="btn btn--primary" href="#meet-the-team">Gặp đội ngũ FixIT ↗</a>
+        <a class="btn btn--secondary" href="#our-values">Tinh thần FixIT ↓</a>
+      </div>
+      <ul class="ab-tags">
+        <li><strong>Từ sinh viên IT</strong><span>Dành cho những ngày học tập tốt hơn</span></li>
+        <li><strong>Mỗi người một thế mạnh</strong><span>Cùng một tinh thần FixIT</span></li>
+      </ul>
+    </div>
+
+    <div class="ab-crew stage aurora on-dark reveal">
+      <div class="hero-motes" aria-hidden="true"><span style="--x:37;--s:4px;--t:18s;--d:-7s"></span><span style="--x:74;--s:5px;--t:14s;--d:-1s"></span><span style="--x:14;--s:6px;--t:19s;--d:-8s"></span><span style="--x:51;--s:3px;--t:15s;--d:-2s"></span><span class="mote--big" style="--x:88;--s:9px;--t:20s;--d:-9s"></span><span style="--x:28;--s:5px;--t:16s;--d:-3s"></span><span style="--x:65;--s:6px;--t:21s;--d:-10s"></span><span style="--x:5;--s:3px;--t:17s;--d:-4s"></span><span style="--x:42;--s:4px;--t:13s;--d:-11s"></span><span class="mote--big" style="--x:79;--s:9px;--t:18s;--d:-5s"></span></div>
+
+      <ul class="ab-crew-list">
+        
+        <li>
+          <a href="#member-a" aria-label="Xem phần giới thiệu của Nguyễn Duy Phúc">
+            <span class="ab-avatar"><div class="media media--portrait"><img src="../images/team/a.jpg" alt="Ảnh của Nguyễn Duy Phúc" loading="lazy" decoding="async"></div>
+</span>
+            <span class="ab-crew-no">01</span>
+            <span class="ab-crew-role">Nhóm trưởng</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="#member-b" aria-label="Xem phần giới thiệu của Nguyễn Nhất Minh Quân">
+            <span class="ab-avatar"><div class="media media--portrait"><img src="../images/team/b.jpg" alt="Ảnh của Nguyễn Nhất Minh Quân" loading="lazy" decoding="async"></div>
+</span>
+            <span class="ab-crew-no">02</span>
+            <span class="ab-crew-role">Giao diện</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="#member-c" aria-label="Xem phần giới thiệu của Trần Thái Nhân">
+            <span class="ab-avatar"><div class="media media--portrait"><img src="../images/team/c.jpg" alt="Ảnh của Trần Thái Nhân" loading="lazy" decoding="async"></div>
+</span>
+            <span class="ab-crew-no">03</span>
+            <span class="ab-crew-role">Công cụ chẩn đoán</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="#member-d" aria-label="Xem phần giới thiệu của Nguyễn Cao Bản">
+            <span class="ab-avatar"><div class="media media--portrait"><img src="../images/team/d.jpg" alt="Ảnh của Nguyễn Cao Bản" loading="lazy" decoding="async"></div>
+</span>
+            <span class="ab-crew-no">04</span>
+            <span class="ab-crew-role">Giỏ hàng và ưu đãi</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="#member-e" aria-label="Xem phần giới thiệu của Trần Lê Minh Đức">
+            <span class="ab-avatar"><div class="media media--portrait"><img src="../images/team/e.jpg" alt="Ảnh của Trần Lê Minh Đức" loading="lazy" decoding="async"></div>
+</span>
+            <span class="ab-crew-no">05</span>
+            <span class="ab-crew-role">Nội dung</span>
+          </a>
+        </li>
+        
+      </ul>
+      <p class="ab-crew-stat"><strong>05</strong> người bạn cùng gỡ rối</p>
+    </div>
+  </div>
+
+  <nav class="container ab-toc" aria-label="Mục lục trang">
+    <a href="#our-values"><span>01</span> Tinh thần FixIT</a>
+    <a href="#meet-the-team"><span>02</span> Đội ngũ</a>
+    <a href="#our-process"><span>03</span> Cách làm việc</a>
+  </nav>
+</section>
+
+
+<section class="section section--tint ab-section" id="our-values" aria-labelledby="values-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="ab-label"><span>01</span> / Những điều chúng mình tin</p>
+      <h2 class="display-sm" id="values-title">Làm việc có tâm<br>Sửa máy có cách</h2>
+      <p class="section-lead">Giúp sinh viên xử lý sự cố công nghệ nhanh, dễ hiểu và với giá sinh viên, để tập trung vào việc học.</p>
+    </div>
+    <ul class="ab-values">
+      
+      <li class="ab-value reveal">
+        <span class="ab-value-icon" aria-hidden="true">↗</span>
+        <span class="ab-value-no">01</span>
+        <h3>Nhanh chóng</h3>
+        <p>Xử lý trong ngày, không giữ máy qua đêm.</p>
+      </li>
+      
+      <li class="ab-value reveal">
+        <span class="ab-value-icon" aria-hidden="true">&lt;/&gt;</span>
+        <span class="ab-value-no">02</span>
+        <h3>Dễ hiểu</h3>
+        <p>Nói rõ lỗi do đâu và đã làm gì, không dùng thuật ngữ khó.</p>
+      </li>
+      
+      <li class="ab-value reveal">
+        <span class="ab-value-icon" aria-hidden="true">₫</span>
+        <span class="ab-value-no">03</span>
+        <h3>Đúng giá sinh viên</h3>
+        <p>Giá trọn gói, báo rõ từ đầu, bảo hành sửa lại miễn phí 7 ngày.</p>
+      </li>
+      
+    </ul>
+  </div>
+</section>
+
+
+<section class="section ab-section" id="meet-the-team" aria-labelledby="team-title">
+  <div class="container">
+    <div class="ab-team-head reveal">
+      <div>
+        <p class="ab-label"><span>02</span> / Mỗi người một mảnh ghép</p>
+        <h2 class="display-sm" id="team-title">Gặp những người bạn<br>đứng sau FixIT</h2>
+      </div>
+      <p class="ab-big-stat"><strong>05</strong><span>thành viên cùng xây dựng một trải nghiệm tốt hơn</span></p>
+    </div>
+
+    <div class="ab-team">
+      
+      <article class="ab-member reveal" id="member-a">
+        <div class="ab-member-photo">
+          <div class="media media--portrait"><img src="../images/team/a.jpg" alt="Ảnh của Nguyễn Duy Phúc" loading="lazy" decoding="async"></div>
+
+          <span class="ab-member-no">FixIT / 01</span>
+        </div>
+        <div class="ab-member-body">
+          <p class="ab-member-role">Nhóm trưởng</p>
+          <h3 class="ab-member-name">Nguyễn Duy Phúc</h3>
+          <p class="ab-member-task">Thiết lập Hugo, deploy và quản lý repo.</p>
+          
+        </div>
+      </article>
+      
+      <article class="ab-member reveal" id="member-b">
+        <div class="ab-member-photo">
+          <div class="media media--portrait"><img src="../images/team/b.jpg" alt="Ảnh của Nguyễn Nhất Minh Quân" loading="lazy" decoding="async"></div>
+
+          <span class="ab-member-no">FixIT / 02</span>
+        </div>
+        <div class="ab-member-body">
+          <p class="ab-member-role">Giao diện</p>
+          <h3 class="ab-member-name">Nguyễn Nhất Minh Quân</h3>
+          <p class="ab-member-task">Layout, CSS, responsive và logo.</p>
+          
+        </div>
+      </article>
+      
+      <article class="ab-member reveal" id="member-c">
+        <div class="ab-member-photo">
+          <div class="media media--portrait"><img src="../images/team/c.jpg" alt="Ảnh của Trần Thái Nhân" loading="lazy" decoding="async"></div>
+
+          <span class="ab-member-no">FixIT / 03</span>
+        </div>
+        <div class="ab-member-body">
+          <p class="ab-member-role">Công cụ chẩn đoán</p>
+          <h3 class="ab-member-name">Trần Thái Nhân</h3>
+          <p class="ab-member-task">Trang Find your fix.</p>
+          
+        </div>
+      </article>
+      
+      <article class="ab-member reveal" id="member-d">
+        <div class="ab-member-photo">
+          <div class="media media--portrait"><img src="../images/team/d.jpg" alt="Ảnh của Nguyễn Cao Bản" loading="lazy" decoding="async"></div>
+
+          <span class="ab-member-no">FixIT / 04</span>
+        </div>
+        <div class="ab-member-body">
+          <p class="ab-member-role">Giỏ hàng và ưu đãi</p>
+          <h3 class="ab-member-name">Nguyễn Cao Bản</h3>
+          <p class="ab-member-task">Giỏ hàng, mã giảm giá và Student Pack.</p>
+          
+        </div>
+      </article>
+      
+      <article class="ab-member reveal" id="member-e">
+        <div class="ab-member-photo">
+          <div class="media media--portrait"><img src="../images/team/e.jpg" alt="Ảnh của Trần Lê Minh Đức" loading="lazy" decoding="async"></div>
+
+          <span class="ab-member-no">FixIT / 05</span>
+        </div>
+        <div class="ab-member-body">
+          <p class="ab-member-role">Nội dung</p>
+          <h3 class="ab-member-name">Trần Lê Minh Đức</h3>
+          <p class="ab-member-task">Nội dung dịch vụ, About, Contact và hình ảnh.</p>
+          
+        </div>
+      </article>
+      
+    </div>
+    
+
+    <aside class="ab-ribbon panel panel--tone aurora on-dark reveal" aria-label="Một đội ngũ nhỏ">
+      <span class="ab-ribbon-mark" aria-hidden="true">&amp;</span>
+      <div class="ab-ribbon-text">
+        <p class="ab-ribbon-label">Một đội ngũ nhỏ</p>
+        <h3>Nhiều góc nhìn<br>Cùng một mục tiêu</h3>
+      </div>
+      <a class="btn btn--primary" href="../contact/index.html">Liên lạc chúng mình ↗</a>
+    </aside>
+  </div>
+</section>
+
+
+<section class="section section--tint ab-section" id="our-process" aria-labelledby="process-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="ab-label"><span>03</span> / Rõ ràng trong từng bước</p>
+      <h2 class="display-sm" id="process-title">Không chỉ sửa xong<br>Mà còn hiểu rõ</h2>
+      <p class="section-lead">Mỗi yêu cầu đi qua ba bước, để bạn luôn biết máy đang được xử lý ra sao và vì sao.</p>
+    </div>
+    <ol class="ab-steps">
+      <li class="ab-step reveal"><span class="ab-step-no">01</span><h3>Xác nhận phạm vi</h3><p>Ghi lại sự cố, mục tiêu và dữ liệu cần sao lưu, rồi thống nhất cách làm cùng bạn trước khi bắt đầu.</p></li>
+      <li class="ab-step reveal"><span class="ab-step-no">02</span><h3>Thử đúng tình huống</h3><p>Xử lý theo thỏa thuận, rồi chạy lại đúng việc từng gây lỗi để chắc rằng máy đã ổn.</p></li>
+      <li class="ab-step reveal"><span class="ab-step-no">03</span><h3>Cùng kiểm tra kết quả</h3><p>Bạn tự thử lại việc đang làm dở, nhóm giải thích đã làm gì và dặn những điều cần để ý sau đó.</p></li>
+    </ol>
+    <aside class="notice reveal" aria-label="Phạm vi bảo hành">
+      <p class="notice-title">Phạm vi bảo hành 7 ngày</p>
+      <p>Lỗi phát sinh từ phía FixIT được sửa lại miễn phí. Với lỗi do phía khách hàng hoặc vấn đề mới, nhóm sẽ kiểm tra và báo trước một khoản phí nhỏ.</p>
+    </aside>
+  </div>
+</section>
+
+
+<section class="section ab-section" aria-labelledby="ai-title">
+  <div class="container ab-ai">
+    <div class="reveal">
+      <p class="ab-label">Minh bạch từ cách làm</p>
+      <h2 class="display-sm" id="ai-title">Chúng mình dùng AI như thế nào</h2>
+      <p class="section-lead">Nhóm công khai việc có dùng AI hỗ trợ trong quá trình làm sản phẩm này, cho các việc sau:</p>
+      <p class="ab-check"><span aria-hidden="true">✓</span>Mọi nội dung và mã nguồn có AI hỗ trợ đều được thành viên đọc, kiểm thử và hiểu rõ trước khi đưa vào sản phẩm.</p>
+    </div>
+    <ol class="ab-ai-list reveal">
+      <li><span class="ab-ai-no">01</span><span class="ab-ai-text">Brainstorm ý tưởng và tên gọi</span><span class="ab-ai-arrow" aria-hidden="true">↗</span></li><li><span class="ab-ai-no">02</span><span class="ab-ai-text">Viết và chỉnh sửa nội dung</span><span class="ab-ai-arrow" aria-hidden="true">↗</span></li><li><span class="ab-ai-no">03</span><span class="ab-ai-text">Gợi ý concept hình ảnh</span><span class="ab-ai-arrow" aria-hidden="true">↗</span></li><li><span class="ab-ai-no">04</span><span class="ab-ai-text">Sắp xếp cấu trúc nội dung</span><span class="ab-ai-arrow" aria-hidden="true">↗</span></li><li><span class="ab-ai-no">05</span><span class="ab-ai-text">Kiểm thử luồng người dùng</span><span class="ab-ai-arrow" aria-hidden="true">↗</span></li>
+    </ol>
+  </div>
+</section>
+
+
+
+<section class="band band--accent aurora on-dark" aria-labelledby="about-cta-title">
+  <div class="container band-inner">
+    <div class="reveal">
+      <p class="eyebrow">Việc học cứ tiếp tục</p>
+      <h2 class="display-sm" id="about-cta-title">Máy có chút khó ở?<br>Để FixIT cùng gỡ rối</h2>
+      <p class="lead">Chọn cách bạn muốn bắt đầu: tự chẩn đoán trước, hoặc xem luôn các dịch vụ và bảng giá.</p>
+      <div class="pack-cta-actions">
+        <a class="btn btn--primary" href="../find-your-fix/index.html">Tìm cách sửa máy ↗</a>
+        <a class="btn btn--secondary" href="../services/index.html">Xem dịch vụ và bảng giá</a>
+      </div>
+    </div>
+    <div class="pack-strip reveal" aria-hidden="true">
+      <figure class="pack-strip-item"><img src="../images/services/vscode-setup.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></figure><figure class="pack-strip-item"><img src="../images/services/python-setup.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></figure><figure class="pack-strip-item"><img src="../images/services/git-github.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></figure><figure class="pack-strip-item"><img src="../images/services/windows-rescue.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--note">
+  <div class="container narrow reveal">
+    <p class="muted">Đồ án 1 – CSC00006 · Sản phẩm học tập. Giỏ hàng, quy trình hẹn gặp và thanh toán chỉ là mô phỏng, không thu tiền và không lưu thông tin nhạy cảm thật.</p>
+  </div>
+</section>
+
+  </main>
+  
+<footer class="site-footer on-dark">
+  <div class="container">
+    <p class="footer-slogan">Fix it fast, built to last</p>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-logo"><img class="brand-mark" src="../images/logo.svg" alt="" width="40" height="40"><span>FixIT Student</span></p>
+        <p class="footer-text">Dịch vụ cài đặt, sửa lỗi và tư vấn công nghệ dành cho sinh viên, giá sinh viên.</p>
+        <button class="cmdk-hint" type="button" data-cmdk-open>Tìm nhanh <kbd>Ctrl</kbd><kbd>K</kbd></button>
+      </div>
+
+      <nav aria-label="Khám phá dịch vụ">
+        <h2 class="footer-heading">Khám phá dịch vụ</h2>
+        <ul class="footer-list">
+          <li><a href="../services/index.html">Danh mục dịch vụ IT</a></li>
+          <li><a href="../find-your-fix/index.html">Chẩn đoán Find Your Fix</a></li>
+          <li><a href="../student-pack/index.html">Gói Student Pack 6-in-1</a></li>
+          <li><a href="../track/index.html">Tra cứu lịch hẹn và đơn hỗ trợ</a></li>
+          <li><a href="../about/index.html">Về đội ngũ sinh viên</a></li>
+          <li><a href="../faq/index.html">Câu hỏi thường gặp</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer-heading">Liên hệ</h2>
+        <ul class="footer-list footer-list--plain">
+          <li><a href="mailto:toilasinhvienhcmus@gmail.com">toilasinhvienhcmus@gmail.com</a></li>
+          <li>Hẹn trước qua Zalo</li>
+          <li>Thứ 2 – Thứ 6: 17:00 – 21:00 · Thứ 7: 08:00 – 12:00</li>
+          <li>Điểm hẹn: CS1: Tầng 1 tòa nhà I, 227 Nguyễn Văn Cừ, Q.5. CS2: sảnh Thư viện, Khu đô thị ĐHQG-HCM, TP. Thủ Đức (hẹn trước qua Zalo)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <p>Sản phẩm học tập (Đồ án 1 – CSC00006). Giỏ hàng, quy trình hẹn gặp và thanh toán chỉ là mô phỏng, không thu tiền và không lưu thông tin nhạy cảm thật.</p>
+    </div>
+  </div>
+</footer>
+
+  <div class="chat" data-chat data-index="../chatbot-index.json">
+  <button class="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel" data-chat-toggle>
+    <span class="chat-orb" aria-hidden="true"><img src="../images/logo.svg" alt="" width="48" height="48"></span>
+    <span class="chat-launcher-text">
+      <span class="chat-launcher-label" data-chat-label>Hỏi FixIT</span>
+      <span class="chat-launcher-sub" aria-hidden="true">Trợ lý tự động <span class="chat-dots"><i></i><i></i><i></i></span></span>
+    </span>
+  </button>
+
+  <section class="chat-panel" id="chat-panel" role="dialog" aria-labelledby="chat-title" hidden>
+    <header class="chat-head">
+      <div>
+        <h2 class="chat-title" id="chat-title">Trợ lý FixIT</h2>
+        <p class="chat-sub">Trả lời dựa trên nội dung trang web này</p>
+      </div>
+      <button class="btn btn--ghost btn--small chat-close" type="button" data-chat-close>Đóng</button>
+    </header>
+
+    <div class="chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0" aria-label="Nội dung hội thoại" data-chat-log></div>
+
+    <div class="chat-chips" data-chat-chips></div>
+
+    <form class="chat-form" data-chat-form novalidate>
+      <label class="sr-only" for="chat-input">Câu hỏi của bạn</label>
+      <input class="input" id="chat-input" type="text" autocomplete="off" maxlength="200" placeholder="Ví dụ: Python báo No module named?" data-chat-input>
+      <button class="btn btn--primary btn--small" type="submit">Gửi</button>
+    </form>
+
+    <p class="chat-note">Trợ lý tự động, không phải người thật. Cần hỗ trợ trực tiếp, hãy nhắn qua Zalo.</p>
+  </section>
+</div>
+
+  <!-- ===== Hộp thoại tài khoản: đăng nhập và đăng ký (account.js điều khiển) ===== -->
+  <dialog class="auth" data-auth aria-labelledby="auth-title">
+    <div class="auth-grid">
+      <div class="auth-side" aria-hidden="true">
+        <p class="auth-side-k">Thành viên FixIT</p>
+        <div class="mcard" data-mcard data-mcard-preview>
+          <div class="mcard-top"><img src="../images/logo.svg" alt="" width="36" height="36"><span>Thẻ thành viên</span><span class="mcard-no" data-mcard-no>FX-0000</span></div>
+          <div class="mcard-mid"><span class="mcard-ava" data-mcard-ava></span><div><p class="mcard-name" data-mcard-name>Tên của bạn</p><p class="mcard-level" data-mcard-since>Thành viên FixIT</p></div></div>
+          <div class="mcard-bot"><span><b data-mcard-orders>0</b> đơn đã đặt</span><span class="mcard-slogan">Fix it fast, built to last</span></div>
+        </div>
+        <ul class="auth-perks">
+          <li>Đặt lịch dịch vụ</li>
+          <li>Theo dõi tiến trình từng đơn</li>
+          <li>Xem lại các đơn đã đặt</li>
+        </ul>
+      </div>
+
+      <div class="auth-main">
+        <button class="btn btn--ghost btn--small auth-close" type="button" data-auth-close>Đóng</button>
+        <h2 class="auth-title" id="auth-title" data-auth-title>Chào mừng trở lại</h2>
+
+        <div class="auth-tabs" role="tablist" aria-label="Chọn đăng nhập hoặc đăng ký" data-auth-tabs>
+          <button type="button" role="tab" aria-selected="true" data-auth-tab="login">Đăng nhập</button>
+          <button type="button" role="tab" aria-selected="false" data-auth-tab="signup">Đăng ký</button>
+        </div>
+
+        <!-- Đăng nhập -->
+        <form class="auth-form" data-auth-login novalidate>
+          <div class="field">
+            <label for="au-name">Tên đăng nhập</label>
+            <input class="input" id="au-name" name="name" type="text" autocomplete="username" maxlength="20">
+          </div>
+          <div class="field">
+            <label for="au-pass">Mật khẩu</label>
+            <div class="inline-field">
+              <input class="input" id="au-pass" name="pass" type="password" autocomplete="current-password" maxlength="64">
+              <button class="btn btn--secondary" type="button" data-pass-toggle="au-pass" aria-pressed="false">Hiện</button>
+            </div>
+          </div>
+          <p class="field-error" data-login-err role="alert" hidden></p>
+          <button class="btn btn--primary auth-submit" type="submit">Đăng nhập</button>
+          <p class="auth-switch">Chưa có tài khoản? <button type="button" class="text-link" data-auth-tab="signup">Đăng ký trong 30 giây</button></p>
+        </form>
+
+        <!-- Đăng ký: 3 bước -->
+        <form class="auth-form" data-auth-signup novalidate hidden>
+          <ol class="auth-steps" aria-hidden="true"><li class="is-on"></li><li></li><li></li></ol>
+
+          <div class="auth-step" data-step="1">
+            <div class="field">
+              <label for="su-name">Bước 1 / 3 · Bạn muốn được gọi là gì?</label>
+              <input class="input" id="su-name" name="name" type="text" autocomplete="username" maxlength="20" placeholder="Ví dụ: Minh debug" aria-describedby="su-name-err">
+              <p class="field-hint">Từ 2 đến 20 ký tự. Tên này hiện trên thẻ thành viên.</p>
+              <p class="field-error" id="su-name-err" role="alert" hidden></p>
+            </div>
+            <div class="auth-nav"><button class="btn btn--primary" type="button" data-step-next>Tiếp tục</button></div>
+          </div>
+
+          <div class="auth-step" data-step="2" hidden>
+            <div class="field">
+              <label for="su-pass">Bước 2 / 3 · Đặt mật khẩu</label>
+              <div class="inline-field">
+                <input class="input" id="su-pass" name="pass" type="password" autocomplete="new-password" maxlength="64" aria-describedby="su-pass-msg">
+                <button class="btn btn--secondary" type="button" data-pass-toggle="su-pass" aria-pressed="false">Hiện</button>
+              </div>
+              <div class="meter" data-meter aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <p class="field-hint" id="su-pass-msg" data-meter-msg aria-live="polite">Ít nhất 6 ký tự.</p>
+            </div>
+            <div class="auth-nav"><button class="btn btn--ghost" type="button" data-step-back>Quay lại</button><button class="btn btn--primary" type="button" data-step-next>Tiếp tục</button></div>
+          </div>
+
+          <div class="auth-step" data-step="3" hidden>
+            <p class="auth-label">Bước 3 / 3 · Chọn hình đại diện và điều bạn quan tâm</p>
+            <div class="ava-pick">
+              <span class="ava-big" data-ava-preview></span>
+              <div>
+                <p class="field-hint">Hình được vẽ tự động từ một con số ngẫu nhiên.</p>
+                <button class="btn btn--secondary btn--small" type="button" data-ava-roll>Đổi kiểu khác</button>
+              </div>
+            </div>
+            <div class="chips" role="group" aria-label="Điều bạn quan tâm" data-major>
+              <button type="button" class="chip is-active" data-major-opt="Python" aria-pressed="true">Python</button>
+              <button type="button" class="chip" data-major-opt="C/C++" aria-pressed="false">C/C++</button>
+              <button type="button" class="chip" data-major-opt="Git và GitHub" aria-pressed="false">Git và GitHub</button>
+              <button type="button" class="chip" data-major-opt="Windows" aria-pressed="false">Windows</button>
+              <button type="button" class="chip" data-major-opt="Chọn laptop" aria-pressed="false">Chọn laptop</button>
+            </div>
+            <p class="field-error" data-signup-err role="alert" hidden></p>
+            <div class="auth-nav"><button class="btn btn--ghost" type="button" data-step-back>Quay lại</button><button class="btn btn--primary" type="submit">Tạo tài khoản</button></div>
+          </div>
+        </form>
+
+        <!-- Đăng ký xong -->
+        <div class="auth-done" data-auth-done hidden>
+          <p class="auth-done-k">Tài khoản đã sẵn sàng</p>
+          <h3 class="auth-done-h" tabindex="-1">Xong rồi, <span data-done-name></span></h3>
+          <p class="auth-done-t">Giờ bạn có thể đặt lịch. Mọi đơn đã đặt sẽ nằm ở trang thành viên để bạn theo dõi.</p>
+          <div class="auth-nav"><a class="btn btn--primary" href="../account/index.html">Xem trang thành viên</a><button class="btn btn--secondary" type="button" data-auth-close>Tiếp tục xem web</button></div>
+        </div>
+
+        <p class="auth-note">Tài khoản mô phỏng: dữ liệu chỉ lưu trên trình duyệt này, không gửi đi đâu. Đừng dùng lại mật khẩu thật của bạn.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ===== Bảng lệnh (Ctrl + K): tìm trang, dịch vụ, lệnh nhanh (play.js điều khiển) ===== -->
+  <dialog class="cmdk" data-cmdk aria-label="Bảng lệnh">
+    <div class="cmdk-box">
+      <label class="sr-only" for="cmdk-input">Tìm trang, dịch vụ hoặc lệnh</label>
+      <input class="cmdk-input" id="cmdk-input" type="text" autocomplete="off" placeholder="Tìm trang, dịch vụ hoặc lệnh" data-cmdk-input>
+      <ul class="cmdk-list" data-cmdk-list>
+        <li><a href="../index.html" data-k="trang chu home"><span>Trang chủ</span><em>Trang</em></a></li>
+        <li><a href="../services/index.html" data-k="dich vu services bang gia"><span>Dịch vụ và bảng giá</span><em>Trang</em></a></li>
+        <li><a href="../find-your-fix/index.html" data-k="find your fix chan doan loi"><span>Find your fix: chẩn đoán lỗi</span><em>Trang</em></a></li>
+        <li><a href="../student-pack/index.html" data-k="student pack goi combo"><span>Student Pack</span><em>Trang</em></a></li>
+        <li><a href="../about/index.html" data-k="about doi ngu gioi thieu"><span>Về đội ngũ</span><em>Trang</em></a></li>
+        <li><a href="../contact/index.html" data-k="contact lien he zalo email"><span>Liên hệ</span><em>Trang</em></a></li>
+        <li><a href="../faq/index.html" data-k="faq cau hoi thuong gap"><span>Câu hỏi thường gặp</span><em>Trang</em></a></li>
+        <li><a href="../cart/index.html" data-k="gio hang cart dat lich"><span>Giỏ hàng</span><em>Trang</em></a></li>
+        <li><a href="../track/index.html" data-k="theo doi don tra cuu track"><span>Theo dõi đơn</span><em>Trang</em></a></li>
+        <li><a href="../account/index.html" data-k="thanh vien tai khoan don da dat lich su account"><span>Trang thành viên</span><em>Trang</em></a></li>
+        <li><a href="../services/windows-rescue/index.html" data-k="windows rescue man hinh xanh cai win"><span>Windows Rescue</span><em>Dịch vụ</em></a></li>
+        <li><a href="../services/python-setup/index.html" data-k="python pip venv no module named"><span>Python Environment Setup</span><em>Dịch vụ</em></a></li>
+        <li><a href="../services/cpp-setup/index.html" data-k="c++ cpp g++ gcc bien dich"><span>C/C++ Development Setup</span><em>Dịch vụ</em></a></li>
+        <li><a href="../services/git-github/index.html" data-k="git github ssh push"><span>Git &amp; GitHub Setup</span><em>Dịch vụ</em></a></li>
+        <li><a href="../services/vscode-setup/index.html" data-k="vs code vscode extension"><span>VS Code Setup</span><em>Dịch vụ</em></a></li>
+        <li><a href="../services/laptop-health/index.html" data-k="laptop health cham nong quat"><span>Laptop Health Check</span><em>Dịch vụ</em></a></li>
+        <li><a href="../services/data-backup/index.html" data-k="data backup sao luu mat file"><span>Data Backup</span><em>Dịch vụ</em></a></li>
+        <li><a href="../services/tech-consultation/index.html" data-k="tech consultation tu van mua laptop"><span>Tech Consultation</span><em>Dịch vụ</em></a></li>
+        <li><button type="button" data-cmd="theme" data-k="giao dien sang toi dark light theme"><span>Đổi giao diện Sáng / Tối</span><em>Lệnh</em></button></li>
+        <li><button type="button" data-cmd="chat" data-k="tro ly chatbot hoi fixit"><span>Mở trợ lý Hỏi FixIT</span><em>Lệnh</em></button></li>
+        <li><button type="button" data-cmd="account" data-k="dang nhap dang ky tai khoan login"><span>Đăng nhập hoặc đăng ký</span><em>Lệnh</em></button></li>
+      </ul>
+      <p class="cmdk-empty" data-cmdk-empty hidden>Không có kết quả phù hợp.</p>
+      <p class="cmdk-foot"><kbd>↑</kbd><kbd>↓</kbd> để chọn <kbd>Enter</kbd> để mở <kbd>Esc</kbd> để đóng</p>
+    </div>
+  </dialog>
+
+  <p class="sr-only" role="status" aria-live="polite" data-live></p>
+
+  <script src="../js/main.js?v=1795065322" defer></script>
+  
+  <script src="../js/chatbot.js?v=1795065322" defer></script>
+  <script src="../js/account.js?v=1795065322" defer></script>
+  <script src="../js/play.js?v=1795065322" defer></script>
+<script>
+(function () {
+  function packState() {
+    var raw = window.name || '';
+    if (raw.indexOf('fixit:') !== 0) return '';
+    var b64 = btoa(unescape(encodeURIComponent(raw.slice(6))));
+    return b64.replace(/[+]/g, '-').replace(/[/]/g, '_').replace(/=+$/, '');
+  }
+  function carry(e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a || !a.getAttribute('href')) return;
+    var href = a.getAttribute('href');
+    if (href.charAt(0) === '#' || /^(mailto:|tel:|javascript:|https?:)/i.test(href)) return;
+    var state = packState();
+    if (!state) return;
+    var url = new URL(href, location.href);
+    url.searchParams.set('fx', state);
+    a.setAttribute('href', url.href);
+  }
+  document.addEventListener('click', carry, true);
+  document.addEventListener('auxclick', carry, true);
+})();
+</script>
+</body>
+</html>

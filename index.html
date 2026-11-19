@@ -1,0 +1,756 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>FixIT Student 2.0</title>
+<link rel="stylesheet" href="css/main.css?v=1795065322"><script>
+(function () {
+  try {
+    var m = /[?&]fx=([^&#]+)/.exec(location.search);
+    if (!m) return;
+    var b64 = m[1].replace(/-/g, '+').replace(/_/g, '/');
+    var json = decodeURIComponent(escape(atob(b64)));
+    var data = JSON.parse(json);
+    window.name = 'fixit:' + JSON.stringify(data);
+    try {
+      Object.keys(data).forEach(function (k) { window.localStorage.setItem(k, data[k]); });
+    } catch (e) { /* bị chặn */ }
+  } catch (e) { /* bỏ qua */ }
+})();
+</script><script>
+    document.documentElement.classList.add('js');
+    (function () {
+      
+
+      var s = null;
+      try { s = window.localStorage.getItem('fixit_theme'); } catch (e) {   }
+      if (s !== 'dark' && s !== 'light') {
+        try {
+          var n = window.name || '';
+          if (n.indexOf('fixit:') === 0) s = JSON.parse(n.slice(6)).fixit_theme;
+        } catch (e) {   }
+      }
+      var t = (s === 'dark' || s === 'light') ? s
+        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.style.setProperty('--aurora-t', ((Date.now() / 1000) % 1440).toFixed(2));
+    })();
+  </script>
+<script>document.body.setAttribute("data-tone","dark")</script>
+
+  <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
+  <p class="promo"><span>Student Pack: 6 dịch vụ chỉ 159.000đ, tiết kiệm 45.000đ so với mua lẻ.</span> <a href="student-pack/index.html">Xem gói</a></p>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="FixIT Student, về trang chủ"><img class="brand-mark" src="images/logo.svg" alt="" width="36" height="36"><span>FixIT<span class="brand-sub"> Student</span></span></a>
+
+    <nav class="nav" id="site-nav" aria-label="Điều hướng chính">
+      <ul class="nav-list" data-nav-list><li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="services/index.html">Services</a></li><li><a class="nav-link" href="find-your-fix/index.html">Find your fix</a></li><li><a class="nav-link" href="student-pack/index.html">Student Pack</a></li><li><a class="nav-link" href="about/index.html">About</a></li><li><a class="nav-link" href="contact/index.html">Contact</a></li><li class="nav-account"><a class="account-chip" href="account/index.html" data-account-chip><span class="account-ava" data-account-ava aria-hidden="true"></span><span data-account-name>Log in</span></a></li></ul>
+    </nav>
+
+    <div class="header-actions">
+      <div class="theme-switch" role="group" aria-label="Giao diện sáng hoặc tối">
+        <button type="button" data-theme-set="light" aria-pressed="true">Sáng</button>
+        <button type="button" data-theme-set="dark" aria-pressed="false">Tối</button>
+      </div>
+      <a class="account-chip" href="account/index.html" data-account-chip><span class="account-ava" data-account-ava aria-hidden="true"></span><span data-account-name>Log in</span></a>
+      <a class="btn btn--secondary btn--small cart-btn" href="cart/index.html">Giỏ hàng <span data-cart-count>0</span></a>
+      <a class="btn btn--primary btn--small header-cta" href="services/index.html">Đặt lịch</a>
+      <button class="btn btn--ghost btn--small nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+    </div>
+  </div>
+</header>
+
+  <main id="main" tabindex="-1" class="page">
+    
+
+
+
+
+
+
+
+
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-inner">
+      <p class="eyebrow" data-hello>Dịch vụ công nghệ dành cho sinh viên</p>
+      <h1 class="slogan" id="hero-title" aria-label="Fix it fast, built to last"><span class="sw" style="--i:0" aria-hidden="true">Fix</span> <span class="sw" style="--i:1" aria-hidden="true">it</span> <span class="sw hl" style="--i:2" aria-hidden="true">fast</span><span class="sw cm" style="--i:2" aria-hidden="true">,</span><br><span class="sw" style="--i:3" aria-hidden="true">built</span> <span class="sw" style="--i:4" aria-hidden="true">to</span> <span class="sw hl" style="--i:5" aria-hidden="true">last</span> </h1>
+      <p class="lead">Cài đặt, sửa lỗi và tư vấn công nghệ cho sinh viên. Giá từ 9.000đ, hẹn gặp trực tiếp tại CS1 hoặc CS2.</p>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="find-your-fix/index.html">Chẩn đoán lỗi ngay</a>
+        <a class="btn btn--secondary" href="services/index.html">Xem 8 dịch vụ</a>
+      </div>
+      <ul class="badges" aria-label="Cam kết">
+        <li tabindex="0" aria-describedby="tip-fast">Xử lý trong ngày<span class="tip" id="tip-fast" role="tooltip"><strong>Xử lý trong ngày</strong>Xử lý nhanh gọn trong thời gian không quá 1 tiếng.</span></li>
+        <li tabindex="0" aria-describedby="tip-warranty">Bảo hành 7 ngày<span class="tip" id="tip-warranty" role="tooltip"><strong>Bảo hành 7 ngày</strong>Khách hàng được bảo hành dịch vụ trong vòng 7 ngày kể từ ngày sử dụng dịch vụ. Nếu lỗi phát sinh từ phía khách hàng, FixIT xin phép thu một khoản phí nhỏ cho quá trình sửa chữa. Các lỗi từ phía FixIT được bảo hành hoàn toàn miễn phí.</span></li>
+        <li tabindex="0" aria-describedby="tip-price">Giá sinh viên<span class="tip" id="tip-price" role="tooltip"><strong>Giá sinh viên</strong>Mức giá dành riêng cho sinh viên, từ 9.000đ mỗi dịch vụ, báo rõ trước khi làm.</span></li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="stage aurora on-dark hero-stage">
+        <div class="hero-motes" aria-hidden="true"><span style="--x:37;--s:4px;--t:18s;--d:-7s"></span><span style="--x:74;--s:5px;--t:14s;--d:-1s"></span><span style="--x:14;--s:6px;--t:19s;--d:-8s"></span><span style="--x:51;--s:3px;--t:15s;--d:-2s"></span><span class="mote--big" style="--x:88;--s:9px;--t:20s;--d:-9s"></span><span style="--x:28;--s:5px;--t:16s;--d:-3s"></span><span style="--x:65;--s:6px;--t:21s;--d:-10s"></span><span style="--x:5;--s:3px;--t:17s;--d:-4s"></span><span style="--x:42;--s:4px;--t:13s;--d:-11s"></span><span class="mote--big" style="--x:79;--s:9px;--t:18s;--d:-5s"></span><span style="--x:19;--s:6px;--t:14s;--d:-12s"></span><span style="--x:56;--s:3px;--t:19s;--d:-6s"></span><span style="--x:93;--s:4px;--t:15s;--d:-0s"></span><span style="--x:33;--s:5px;--t:20s;--d:-7s"></span></div>
+
+        <div class="term" aria-hidden="true">
+          <div class="term-bar"><span></span><span></span><span></span></div><div class="term-body" data-term>
+            <div class="tl" data-delay="700"><span class="t-dim">$</span> <span class="tc">python main.py</span></div>
+            <div class="tl t-err" data-delay="350">Traceback (most recent call last):</div>
+            <div class="tl t-err" data-delay="120">  File "main.py", line 1, in &lt;module&gt;</div>
+            <div class="tl t-err" data-delay="120">ModuleNotFoundError: No module named 'numpy'</div>
+            <div class="tl" data-delay="600"></div>
+            <div class="tl" data-delay="200"><span class="t-dim">$</span> <span class="tc">fixit --setup python</span></div>
+            <div class="tl t-ok" data-delay="700">Tạo virtual environment... xong</div>
+            <div class="tl t-ok" data-delay="700">Cài thư viện cần thiết... xong</div>
+            <div class="tl t-ok t-done" data-delay="700">Chạy thử chương trình... thành công</div>
+            <div class="tl" data-delay="500"><span class="t-dim">$</span> </div>
+          </div>
+        </div>
+      </div><div class="hero-float hero-float--svc" aria-hidden="true">
+        <span class="hero-float-k">Dịch vụ phù hợp</span>
+        <span class="hero-float-v">Python Environment Setup</span>
+        <span class="hero-float-m">29.000đ · 30 – 45 phút</span>
+      </div>
+      <div class="hero-float hero-float--ok" aria-hidden="true">
+        <span class="hero-float-k">Bảo hành</span>
+        <span class="hero-float-v">7 ngày</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="stats" aria-label="FixIT Student trong vài con số">
+  <div class="container">
+    <dl class="stat-grid">
+      <div class="stat reveal"><dt>dịch vụ, giá trọn gói</dt><dd><span data-count="8">8</span></dd></div>
+      <div class="stat reveal"><dt>giá từ, báo rõ trước khi làm</dt><dd><span data-count="9000" data-format="vnd">9.000đ</span></dd></div>
+      <div class="stat reveal"><dt>bảo hành sửa lại miễn phí</dt><dd><span data-count="7">7</span> ngày</dd></div>
+      <div class="stat reveal"><dt>điểm hẹn trực tiếp: CS1 và CS2</dt><dd><span data-count="2">2</span> cơ sở</dd></div>
+    </dl>
+  </div>
+</section>
+
+
+<section class="section section--tint" id="our-story" aria-labelledby="story-title">
+  <div class="container ab-story">
+    <div class="reveal">
+      <p class="ab-label">Đi từ một điều quen thuộc</p>
+      <h2 class="display-sm story-title" id="story-title">Từng loay hoay<br>Giờ cùng nhau gỡ rối</h2>
+      <div class="prose">
+        <p>Các thành viên của nhóm đều là sinh viên IT. Chúng mình từng mất rất nhiều thời gian để xử lý lỗi cài đặt, và lỗi luôn xuất hiện đúng lúc deadline đang đến gần.</p><p>FixIT Student ra đời từ trải nghiệm đó: một nơi để sinh viên nhờ bạn cùng trường xử lý nhanh những lỗi công nghệ quen thuộc.</p>
+      </div>
+      <p><a class="text-link" href="about/index.html">Gặp đội ngũ FixIT ↗</a></p>
+    </div>
+    <aside class="ab-spirit panel panel--tone aurora on-dark reveal" aria-label="Tinh thần FixIT">
+      <p class="ab-spirit-label">Tinh thần FixIT</p>
+      <p class="ab-spirit-big">Ít thời gian loay hoay hơn<br>Nhiều thời gian cho điều bạn thích</p>
+      <div class="ab-spirit-foot">
+        <img src="images/logo.svg" alt="" width="44" height="44" decoding="async">
+        <p><span>Hiểu lỗi</span><span>Hiểu bạn</span><span>Fix IT</span></p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+
+<section class="section" aria-labelledby="prob-title">
+  <div class="container duo">
+    <div class="section-head reveal">
+      <h2 id="prob-title">Những rắc rối sinh viên hay gặp</h2>
+      <div class="pain-visual stage" aria-hidden="true">
+        <div class="hv-panel hv-pain" data-hv-cycle data-hv-interval="6200">
+          <div class="hv-head"><span><span class="hv-live"></span>Một tối trước hạn nộp</span><span><span data-hv-index>1</span> / 3</span></div>
+          <div class="hv-body">
+            <div class="hv-scene is-on">
+              <p class="hv-why-k">Trở ngại 01</p>
+              <p class="hv-clock"><span>Hạn nộp còn</span><b data-countdown="10033">02:47:13</b></p>
+              <ol class="hv-log">
+                <li><time>19:05</time>Cài Python</li>
+                <li><time>20:10</time>Sửa biến PATH</li>
+                <li class="is-bad"><time>21:12</time>pip vẫn báo lỗi</li>
+              </ol>
+              <div class="hv-drain"><span>Buổi tối đã trôi qua</span><i></i></div>
+            </div>
+            <div class="hv-scene">
+              <p class="hv-why-k">Trở ngại 02</p>
+              <p class="hv-err">Stop code: 0xc000000f</p>
+              <p class="hv-search"><span class="hv-type">0xc000000f là lỗi gì?</span></p>
+              <ul class="hv-results"><li></li><li></li><li></li><li></li></ul>
+              <p class="hv-why-note">Mỗi trang chỉ một cách khác nhau, không biết cách nào hợp với máy mình</p>
+            </div>
+            <div class="hv-scene">
+              <p class="hv-why-k">Trở ngại 03</p>
+              <div class="hv-vs">
+                <div><b>Tiệm ngoài</b><span>Báo giá sau khi kiểm tra</span><span>Có thể phải gửi máy qua ngày</span></div>
+                <div class="is-fix"><b>FixIT</b><span>Từ 9.000đ, báo giá trước</span><span>Xong ngay trong buổi hẹn</span></div>
+              </div>
+              <p class="hv-why-note">Một lỗi phần mềm nhỏ không đáng tốn cả tuần tiền ăn</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="pains">
+      <li class="pain reveal"><h3>Mất thời gian cài môi trường</h3><p>Cài Python, C/C++ hay Git mất hàng giờ, trong khi deadline đang đến gần.</p></li>
+      <li class="pain reveal"><h3>Khó tra cứu tên lỗi</h3><p>Không biết lỗi tên gì thì khó tìm được cách sửa đúng.</p></li>
+      <li class="pain reveal"><h3>Chi phí tiệm ngoài cao</h3><p>Giá ngoài tiệm thường vượt quá túi tiền sinh viên cho một việc nhỏ.</p></li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="section section--tint" aria-labelledby="adv-title">
+  <div class="container feature">
+    <div class="feature-copy">
+      <div class="section-head reveal">
+        <h2 id="adv-title">Vì sao chọn FixIT</h2>
+      </div>
+      <ul class="benefits">
+        <li class="benefit reveal"><span class="benefit-no">01</span><h3>Trực tiếp</h3><p>Hẹn gặp tại CS1 hoặc CS2, bạn quan sát toàn bộ quá trình xử lý máy.</p></li>
+        <li class="benefit reveal"><span class="benefit-no">02</span><h3>Minh bạch</h3><p>Báo giá rõ ràng ngay từ đầu, không phát sinh chi phí ẩn.</p></li>
+        <li class="benefit reveal"><span class="benefit-no">03</span><h3>An tâm</h3><p>Bảo hành sửa lại miễn phí 7 ngày sau mỗi lần xử lý.</p></li>
+      </ul>
+    </div>
+    <div class="feature-media reveal" aria-hidden="true">
+      <div class="stage"><div class="hv-panel hv-why" data-hv-cycle data-hv-interval="5200">
+  <div class="hv-head"><span><span class="hv-live"></span>Một lần hẹn mẫu</span><span><span data-hv-index>1</span> / 3</span></div>
+  <div class="hv-body">
+    <div class="hv-scene is-on">
+      <p class="hv-why-k">Trực tiếp</p>
+      <p class="hv-why-v">Bạn ngồi cạnh, xem từng bước</p>
+      <dl class="hv-ticket-info">
+        <div><dt>Điểm hẹn</dt><dd>CS1, Quận 5</dd></div>
+        <div><dt>Giờ hẹn</dt><dd>Thứ 3, 18:00</dd></div>
+      </dl>
+      <ol class="hv-watch">
+        <li>Kiểm tra lỗi cùng bạn</li>
+        <li>Xử lý ngay trước mặt bạn</li>
+        <li>Bạn tự chạy thử lại</li>
+      </ol>
+    </div>
+    <div class="hv-scene">
+      <p class="hv-why-k">Minh bạch</p>
+      <p class="hv-why-v">Biết giá trước khi làm</p>
+      <dl class="hv-quote">
+        <div><dt>Python Environment Setup</dt><dd>29.000đ</dd></div>
+        <div><dt>Chi phí phát sinh</dt><dd>0đ</dd></div>
+        <div class="hv-quote-total"><dt>Bạn trả</dt><dd>29.000đ</dd></div>
+      </dl>
+      <p class="hv-why-note">Thanh toán sau khi máy chạy ổn</p>
+    </div>
+    <div class="hv-scene">
+      <p class="hv-why-k">An tâm</p>
+      <p class="hv-why-v">Bảo hành sửa lại 7 ngày</p>
+      <ol class="hv-days"><li><span>Ngày</span>1</li><li><span>Ngày</span>2</li><li><span>Ngày</span>3</li><li><span>Ngày</span>4</li><li><span>Ngày</span>5</li><li><span>Ngày</span>6</li><li><span>Ngày</span>7</li></ol>
+      <dl class="hv-quote">
+        <div class="hv-quote-total"><dt>Lỗi cũ tái phát</dt><dd>Sửa lại 0đ</dd></div>
+      </dl>
+    </div>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" aria-labelledby="steps-title">
+  <div class="container feature feature--rev">
+    <div class="feature-copy">
+      <div class="section-head reveal">
+        <h2 id="steps-title">Quy trình 4 bước</h2>
+        <p class="section-lead">Chỉ thanh toán khi máy chạy ổn.</p>
+      </div>
+      <ol class="steps steps--4">
+        <li class="reveal"><h3>Mô tả vấn đề</h3><p>Cho FixIT biết bạn đang gặp lỗi gì, càng cụ thể càng tốt.</p></li>
+        <li class="reveal"><h3>Dùng Find Your Fix</h3><p>Chọn triệu chứng, công cụ gợi ý đúng dịch vụ cho bạn.</p></li>
+        <li class="reveal"><h3>Gặp kỹ thuật viên</h3><p>Hẹn gặp tại CS1 hoặc CS2 và xử lý ngay trước mặt bạn.</p></li>
+        <li class="reveal"><h3>Nghiệm thu và bảo hành</h3><p>Kiểm tra máy ổn mới thanh toán, được bảo hành 7 ngày.</p></li>
+      </ol>
+      <p class="feature-cta reveal"><a class="btn btn--primary" href="find-your-fix/index.html">Chẩn đoán lỗi ngay</a></p>
+    </div>
+    <div class="feature-media reveal" aria-hidden="true">
+      <div class="stage stage--cool"><div class="hv-panel hv-flow" data-hv-cycle data-hv-interval="5600">
+  <div class="hv-head"><span><span class="hv-live"></span>Chẩn đoán mẫu</span><span><span data-hv-index>1</span> / 3</span></div>
+  <div class="hv-body">
+    <div class="hv-scene is-on">
+      <div class="hv-node"><span class="hv-node-k">Triệu chứng</span><span class="hv-node-v">Gõ python thì máy mở Microsoft Store</span></div>
+      <span class="hv-link"></span>
+      <div class="hv-node"><span class="hv-node-k">Nguyên nhân</span><span class="hv-node-v">Python chưa được thêm vào PATH</span></div>
+      <span class="hv-link"></span>
+      <div class="hv-node hv-node--fix"><span class="hv-node-k">Dịch vụ phù hợp</span><span class="hv-node-v">Python Environment Setup</span><span class="hv-node-p">29.000đ · 30 – 45 phút</span></div>
+    </div>
+    <div class="hv-scene">
+      <div class="hv-node"><span class="hv-node-k">Triệu chứng</span><span class="hv-node-v">git push báo bị từ chối</span></div>
+      <span class="hv-link"></span>
+      <div class="hv-node"><span class="hv-node-k">Nguyên nhân</span><span class="hv-node-v">GitHub chưa được xác thực bằng SSH</span></div>
+      <span class="hv-link"></span>
+      <div class="hv-node hv-node--fix"><span class="hv-node-k">Dịch vụ phù hợp</span><span class="hv-node-v">Git &amp; GitHub Setup</span><span class="hv-node-p">19.000đ · 20 – 30 phút</span></div>
+    </div>
+    <div class="hv-scene">
+      <div class="hv-node"><span class="hv-node-k">Triệu chứng</span><span class="hv-node-v">Máy khởi động mất hơn 2 phút</span></div>
+      <span class="hv-link"></span>
+      <div class="hv-node"><span class="hv-node-k">Nguyên nhân</span><span class="hv-node-v">Quá nhiều ứng dụng chạy cùng Windows</span></div>
+      <span class="hv-link"></span>
+      <div class="hv-node hv-node--fix"><span class="hv-node-k">Dịch vụ phù hợp</span><span class="hv-node-v">Laptop Health Check</span><span class="hv-node-p">49.000đ · 30 – 40 phút</span></div>
+    </div>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section section--tint" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <h2 id="services-title">8 dịch vụ</h2>
+        <p class="section-lead">Giá trọn gói từ 9.000đ. Bấm vào từng dịch vụ để xem chi tiết.</p>
+      </div>
+      <a class="btn btn--secondary" href="services/index.html">Xem tất cả 8 dịch vụ</a>
+    </div>
+    <div class="grid-cards">
+      <article class="card card--link reveal" data-service data-group="software" data-price="79000" data-weight="10">
+  <div class="media media--poster"><img src="images/services/windows-rescue.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></div>
+  <p class="card-meta"><span class="tag">Phần mềm</span> <span>60 – 90 phút</span></p>
+  <h3 class="card-title"><a class="card-link" href="services/windows-rescue/index.html">Windows Rescue</a></h3>
+  <p class="card-text">Khôi phục laptop Windows bị treo, báo lỗi, mất hình hoặc cần cài lại sạch.</p>
+  <div class="card-foot">
+    <p class="card-price">79.000đ</p>
+    <div class="card-actions">
+      <a class="btn btn--secondary btn--small" href="services/windows-rescue/index.html">Chi tiết</a>
+      <button class="btn btn--primary btn--small" type="button" data-add-to-cart data-id="windows-rescue" data-title="Windows Rescue" data-price="79000">Thêm giỏ</button>
+    </div>
+  </div>
+</article>
+<article class="card card--link reveal" data-service data-group="dev" data-price="29000" data-weight="20">
+  <div class="media media--poster"><img src="images/services/python-setup.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></div>
+  <p class="card-meta"><span class="tag">Lập trình &amp; Môi trường</span> <span>30 – 45 phút</span></p>
+  <h3 class="card-title"><a class="card-link" href="services/python-setup/index.html">Python Environment Setup</a></h3>
+  <p class="card-text">Cài Python, pip và venv để chạy code ngay.</p>
+  <div class="card-foot">
+    <p class="card-price">29.000đ</p>
+    <div class="card-actions">
+      <a class="btn btn--secondary btn--small" href="services/python-setup/index.html">Chi tiết</a>
+      <button class="btn btn--primary btn--small" type="button" data-add-to-cart data-id="python-setup" data-title="Python Environment Setup" data-price="29000">Thêm giỏ</button>
+    </div>
+  </div>
+</article>
+<article class="card card--link reveal" data-service data-group="dev" data-price="39000" data-weight="30">
+  <div class="media media--poster"><img src="images/services/cpp-setup.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></div>
+  <p class="card-meta"><span class="tag">Lập trình &amp; Môi trường</span> <span>45 – 60 phút</span></p>
+  <h3 class="card-title"><a class="card-link" href="services/cpp-setup/index.html">C/C&#43;&#43; Development Setup</a></h3>
+  <p class="card-text">Cài trình biên dịch, VS Code và extension, rồi biên dịch chương trình C/C&#43;&#43; đầu tiên.</p>
+  <div class="card-foot">
+    <p class="card-price">39.000đ</p>
+    <div class="card-actions">
+      <a class="btn btn--secondary btn--small" href="services/cpp-setup/index.html">Chi tiết</a>
+      <button class="btn btn--primary btn--small" type="button" data-add-to-cart data-id="cpp-setup" data-title="C/C&#43;&#43; Development Setup" data-price="39000">Thêm giỏ</button>
+    </div>
+  </div>
+</article>
+<article class="card card--link reveal" data-service data-group="dev" data-price="19000" data-weight="40">
+  <div class="media media--poster"><img src="images/services/git-github.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></div>
+  <p class="card-meta"><span class="tag">Lập trình &amp; Môi trường</span> <span>20 – 30 phút</span></p>
+  <h3 class="card-title"><a class="card-link" href="services/git-github/index.html">Git &amp; GitHub Setup</a></h3>
+  <p class="card-text">Cấu hình Git, GitHub, SSH và hướng dẫn quy trình làm việc nhóm cơ bản.</p>
+  <div class="card-foot">
+    <p class="card-price">19.000đ</p>
+    <div class="card-actions">
+      <a class="btn btn--secondary btn--small" href="services/git-github/index.html">Chi tiết</a>
+      <button class="btn btn--primary btn--small" type="button" data-add-to-cart data-id="git-github" data-title="Git &amp; GitHub Setup" data-price="19000">Thêm giỏ</button>
+    </div>
+  </div>
+</article>
+<article class="card card--link reveal" data-service data-group="dev" data-price="9000" data-weight="50">
+  <div class="media media--poster"><img src="images/services/vscode-setup.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></div>
+  <p class="card-meta"><span class="tag">Lập trình &amp; Môi trường</span> <span>15 – 20 phút</span></p>
+  <h3 class="card-title"><a class="card-link" href="services/vscode-setup/index.html">VS Code Setup</a></h3>
+  <p class="card-text">Cấu hình VS Code và các extension cần thiết để học lập trình.</p>
+  <div class="card-foot">
+    <p class="card-price">9.000đ</p>
+    <div class="card-actions">
+      <a class="btn btn--secondary btn--small" href="services/vscode-setup/index.html">Chi tiết</a>
+      <button class="btn btn--primary btn--small" type="button" data-add-to-cart data-id="vscode-setup" data-title="VS Code Setup" data-price="9000">Thêm giỏ</button>
+    </div>
+  </div>
+</article>
+<article class="card card--link reveal" data-service data-group="hardware" data-price="49000" data-weight="60">
+  <div class="media media--poster"><img src="images/services/laptop-health.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></div>
+  <p class="card-meta"><span class="tag">Phần cứng &amp; Máy tính</span> <span>30 – 40 phút</span></p>
+  <h3 class="card-title"><a class="card-link" href="services/laptop-health/index.html">Laptop Health Check</a></h3>
+  <p class="card-text">Kiểm tra phần mềm và hiệu năng laptop, dọn dẹp để máy chạy nhẹ hơn.</p>
+  <div class="card-foot">
+    <p class="card-price">49.000đ</p>
+    <div class="card-actions">
+      <a class="btn btn--secondary btn--small" href="services/laptop-health/index.html">Chi tiết</a>
+      <button class="btn btn--primary btn--small" type="button" data-add-to-cart data-id="laptop-health" data-title="Laptop Health Check" data-price="49000">Thêm giỏ</button>
+    </div>
+  </div>
+</article>
+<article class="card card--link reveal" data-service data-group="hardware" data-price="59000" data-weight="70">
+  <div class="media media--poster"><img src="images/services/data-backup.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></div>
+  <p class="card-meta"><span class="tag">Phần cứng &amp; Máy tính</span> <span>45 – 60 phút</span></p>
+  <h3 class="card-title"><a class="card-link" href="services/data-backup/index.html">Data Backup</a></h3>
+  <p class="card-text">Sao lưu và sắp xếp dữ liệu học tập quan trọng.</p>
+  <div class="card-foot">
+    <p class="card-price">59.000đ</p>
+    <div class="card-actions">
+      <a class="btn btn--secondary btn--small" href="services/data-backup/index.html">Chi tiết</a>
+      <button class="btn btn--primary btn--small" type="button" data-add-to-cart data-id="data-backup" data-title="Data Backup" data-price="59000">Thêm giỏ</button>
+    </div>
+  </div>
+</article>
+<article class="card card--link reveal" data-service data-group="software" data-price="99000" data-weight="80">
+  <div class="media media--poster"><img src="images/services/tech-consultation.jpg?v=1794404985" alt="" loading="lazy" decoding="async"></div>
+  <p class="card-meta"><span class="tag">Phần mềm</span> <span>60 phút</span></p>
+  <h3 class="card-title"><a class="card-link" href="services/tech-consultation/index.html">Tech Consultation</a></h3>
+  <p class="card-text">Tư vấn chọn laptop, phần mềm, công cụ học tập và dựng môi trường học phù hợp.</p>
+  <div class="card-foot">
+    <p class="card-price">99.000đ</p>
+    <div class="card-actions">
+      <a class="btn btn--secondary btn--small" href="services/tech-consultation/index.html">Chi tiết</a>
+      <button class="btn btn--primary btn--small" type="button" data-add-to-cart data-id="tech-consultation" data-title="Tech Consultation" data-price="99000">Thêm giỏ</button>
+    </div>
+  </div>
+</article>
+
+      
+      
+      <article class="tile-cta aurora on-dark reveal">
+        <div>
+          <p class="eyebrow">Find your fix</p>
+          <h3>Không cần biết lỗi tên gì. Chọn vấn đề, FixIT gợi ý đúng dịch vụ.</h3>
+        </div>
+        <a class="btn btn--on-dark" href="find-your-fix/index.html">Chẩn đoán lỗi ngay</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="band band--dark aurora on-dark" aria-labelledby="pack-title">
+  <div class="container band-inner">
+    <div class="reveal">
+      <p class="eyebrow">Student Pack</p>
+      <h2 class="display-sm" id="pack-title">6 giải pháp trong một gói.</h2>
+      <p class="lead">VS Code, Python, C/C++, Git &amp; GitHub, dọn dẹp tăng tốc Windows và sao lưu dữ liệu, kèm một buổi hướng dẫn Git cơ bản.</p>
+      <p class="pack-price"><span class="pack-price-now" data-count="159000" data-format="vnd">159.000đ</span> <span class="pack-price-was">204.000đ</span></p>
+      <p class="muted-on-dark">Tiết kiệm 45.000đ (22%) so với mua lẻ.</p>
+      <a class="btn btn--on-dark" href="student-pack/index.html">Xem Student Pack</a>
+    </div>
+    <div class="band-media reveal" aria-hidden="true">
+      <div class="hv-panel hv-pack" data-hv-cycle data-hv-interval="11000">
+  <div class="hv-head"><span><span class="hv-live"></span>Student Pack</span><span>6 dịch vụ trong một gói</span></div>
+  <div class="hv-body">
+    <div class="hv-scene is-on">
+      <ul class="hv-pack-grid">
+        <li><span class="hv-chip-name">VS Code</span><span class="hv-chip-price">9.000đ</span></li>
+        <li><span class="hv-chip-name">Python</span><span class="hv-chip-price">29.000đ</span></li>
+        <li><span class="hv-chip-name">C/C&#43;&#43;</span><span class="hv-chip-price">39.000đ</span></li>
+        <li><span class="hv-chip-name">Git &amp; GitHub</span><span class="hv-chip-price">19.000đ</span></li>
+        <li><span class="hv-chip-name">Laptop Health Check</span><span class="hv-chip-price">49.000đ</span></li>
+        <li><span class="hv-chip-name">Data Backup</span><span class="hv-chip-price">59.000đ</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section" aria-labelledby="faq-title">
+  <div class="container duo">
+    <div class="section-head reveal">
+      <h2 id="faq-title">Câu hỏi thường gặp</h2>
+      <p class="section-lead">Quy trình xử lý, chi phí và chính sách bảo hành. Không thấy câu trả lời, hãy hỏi trợ lý ở góc màn hình.</p>
+      <p class="section-more"><a class="text-link" href="faq/index.html">Xem tất cả câu hỏi</a></p>
+    </div>
+    
+    <div class="faq-list reveal">
+      
+      <details class="faq-item">
+        <summary>FixIT Student là gì?</summary>
+        <div class="faq-body"><p>FixIT hỗ trợ cài đặt, sửa lỗi và tư vấn công nghệ cho sinh viên, giá từ 9.000đ.</p></div>
+      </details>
+      
+      <details class="faq-item">
+        <summary>Mình chưa biết tên lỗi thì làm sao?</summary>
+        <div class="faq-body"><p>Dùng công cụ Find your fix: chọn vấn đề bạn đang gặp, FixIT sẽ gợi ý đúng dịch vụ. Nếu vẫn không chắc, nhắn Zalo mô tả triệu chứng.</p></div>
+      </details>
+      
+      <details class="faq-item">
+        <summary>FixIT hỗ trợ trực tiếp hay từ xa?</summary>
+        <div class="faq-body"><p>Cả hai. Bạn có thể gặp trực tiếp tại CS1 (Tầng 1 tòa nhà I, 227 Nguyễn Văn Cừ, Q.5) hoặc CS2 (sảnh Thư viện, Khu đô thị ĐHQG-HCM, TP. Thủ Đức), hoặc được hỗ trợ từ xa qua cuộc gọi video (UltraViewer hoặc Google Meet).</p></div>
+      </details>
+      
+      <details class="faq-item">
+        <summary>Dữ liệu của mình có an toàn không?</summary>
+        <div class="faq-body"><p>FixIT chỉ thao tác trên phần liên quan đến lỗi và không sao chép dữ liệu cá nhân hay bài tập của bạn. Bạn nên sao lưu trước; dịch vụ Data Backup có thể hỗ trợ việc này.</p></div>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="band band--accent band--center aurora on-dark" aria-labelledby="cta-title">
+  <div class="container band-inner">
+    <div class="reveal">
+      <h2 class="display" id="cta-title">Gặp lỗi? Nhắn FixIT.</h2>
+    </div>
+    <div class="reveal">
+      <p class="lead">Gửi ảnh lỗi để nhận chẩn đoán sơ bộ, hoặc đặt lịch gặp trực tiếp tại trường.</p>
+      <a class="btn btn--on-dark" href="contact/index.html">Liên hệ ngay</a>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+<footer class="site-footer on-dark">
+  <div class="container">
+    <p class="footer-slogan">Fix it fast, built to last</p>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-logo"><img class="brand-mark" src="images/logo.svg" alt="" width="40" height="40"><span>FixIT Student</span></p>
+        <p class="footer-text">Dịch vụ cài đặt, sửa lỗi và tư vấn công nghệ dành cho sinh viên, giá sinh viên.</p>
+        <button class="cmdk-hint" type="button" data-cmdk-open>Tìm nhanh <kbd>Ctrl</kbd><kbd>K</kbd></button>
+      </div>
+
+      <nav aria-label="Khám phá dịch vụ">
+        <h2 class="footer-heading">Khám phá dịch vụ</h2>
+        <ul class="footer-list">
+          <li><a href="services/index.html">Danh mục dịch vụ IT</a></li>
+          <li><a href="find-your-fix/index.html">Chẩn đoán Find Your Fix</a></li>
+          <li><a href="student-pack/index.html">Gói Student Pack 6-in-1</a></li>
+          <li><a href="track/index.html">Tra cứu lịch hẹn và đơn hỗ trợ</a></li>
+          <li><a href="about/index.html">Về đội ngũ sinh viên</a></li>
+          <li><a href="faq/index.html">Câu hỏi thường gặp</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer-heading">Liên hệ</h2>
+        <ul class="footer-list footer-list--plain">
+          <li><a href="mailto:toilasinhvienhcmus@gmail.com">toilasinhvienhcmus@gmail.com</a></li>
+          <li>Hẹn trước qua Zalo</li>
+          <li>Thứ 2 – Thứ 6: 17:00 – 21:00 · Thứ 7: 08:00 – 12:00</li>
+          <li>Điểm hẹn: CS1: Tầng 1 tòa nhà I, 227 Nguyễn Văn Cừ, Q.5. CS2: sảnh Thư viện, Khu đô thị ĐHQG-HCM, TP. Thủ Đức (hẹn trước qua Zalo)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <p>Sản phẩm học tập (Đồ án 1 – CSC00006). Giỏ hàng, quy trình hẹn gặp và thanh toán chỉ là mô phỏng, không thu tiền và không lưu thông tin nhạy cảm thật.</p>
+    </div>
+  </div>
+</footer>
+
+  <div class="chat" data-chat data-index="chatbot-index.json">
+  <button class="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel" data-chat-toggle>
+    <span class="chat-orb" aria-hidden="true"><img src="images/logo.svg" alt="" width="48" height="48"></span>
+    <span class="chat-launcher-text">
+      <span class="chat-launcher-label" data-chat-label>Hỏi FixIT</span>
+      <span class="chat-launcher-sub" aria-hidden="true">Trợ lý tự động <span class="chat-dots"><i></i><i></i><i></i></span></span>
+    </span>
+  </button>
+
+  <section class="chat-panel" id="chat-panel" role="dialog" aria-labelledby="chat-title" hidden>
+    <header class="chat-head">
+      <div>
+        <h2 class="chat-title" id="chat-title">Trợ lý FixIT</h2>
+        <p class="chat-sub">Trả lời dựa trên nội dung trang web này</p>
+      </div>
+      <button class="btn btn--ghost btn--small chat-close" type="button" data-chat-close>Đóng</button>
+    </header>
+
+    <div class="chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0" aria-label="Nội dung hội thoại" data-chat-log></div>
+
+    <div class="chat-chips" data-chat-chips></div>
+
+    <form class="chat-form" data-chat-form novalidate>
+      <label class="sr-only" for="chat-input">Câu hỏi của bạn</label>
+      <input class="input" id="chat-input" type="text" autocomplete="off" maxlength="200" placeholder="Ví dụ: Python báo No module named?" data-chat-input>
+      <button class="btn btn--primary btn--small" type="submit">Gửi</button>
+    </form>
+
+    <p class="chat-note">Trợ lý tự động, không phải người thật. Cần hỗ trợ trực tiếp, hãy nhắn qua Zalo.</p>
+  </section>
+</div>
+
+  <!-- ===== Hộp thoại tài khoản: đăng nhập và đăng ký (account.js điều khiển) ===== -->
+  <dialog class="auth" data-auth aria-labelledby="auth-title">
+    <div class="auth-grid">
+      <div class="auth-side" aria-hidden="true">
+        <p class="auth-side-k">Thành viên FixIT</p>
+        <div class="mcard" data-mcard data-mcard-preview>
+          <div class="mcard-top"><img src="images/logo.svg" alt="" width="36" height="36"><span>Thẻ thành viên</span><span class="mcard-no" data-mcard-no>FX-0000</span></div>
+          <div class="mcard-mid"><span class="mcard-ava" data-mcard-ava></span><div><p class="mcard-name" data-mcard-name>Tên của bạn</p><p class="mcard-level" data-mcard-since>Thành viên FixIT</p></div></div>
+          <div class="mcard-bot"><span><b data-mcard-orders>0</b> đơn đã đặt</span><span class="mcard-slogan">Fix it fast, built to last</span></div>
+        </div>
+        <ul class="auth-perks">
+          <li>Đặt lịch dịch vụ</li>
+          <li>Theo dõi tiến trình từng đơn</li>
+          <li>Xem lại các đơn đã đặt</li>
+        </ul>
+      </div>
+
+      <div class="auth-main">
+        <button class="btn btn--ghost btn--small auth-close" type="button" data-auth-close>Đóng</button>
+        <h2 class="auth-title" id="auth-title" data-auth-title>Chào mừng trở lại</h2>
+
+        <div class="auth-tabs" role="tablist" aria-label="Chọn đăng nhập hoặc đăng ký" data-auth-tabs>
+          <button type="button" role="tab" aria-selected="true" data-auth-tab="login">Đăng nhập</button>
+          <button type="button" role="tab" aria-selected="false" data-auth-tab="signup">Đăng ký</button>
+        </div>
+
+        <!-- Đăng nhập -->
+        <form class="auth-form" data-auth-login novalidate>
+          <div class="field">
+            <label for="au-name">Tên đăng nhập</label>
+            <input class="input" id="au-name" name="name" type="text" autocomplete="username" maxlength="20">
+          </div>
+          <div class="field">
+            <label for="au-pass">Mật khẩu</label>
+            <div class="inline-field">
+              <input class="input" id="au-pass" name="pass" type="password" autocomplete="current-password" maxlength="64">
+              <button class="btn btn--secondary" type="button" data-pass-toggle="au-pass" aria-pressed="false">Hiện</button>
+            </div>
+          </div>
+          <p class="field-error" data-login-err role="alert" hidden></p>
+          <button class="btn btn--primary auth-submit" type="submit">Đăng nhập</button>
+          <p class="auth-switch">Chưa có tài khoản? <button type="button" class="text-link" data-auth-tab="signup">Đăng ký trong 30 giây</button></p>
+        </form>
+
+        <!-- Đăng ký: 3 bước -->
+        <form class="auth-form" data-auth-signup novalidate hidden>
+          <ol class="auth-steps" aria-hidden="true"><li class="is-on"></li><li></li><li></li></ol>
+
+          <div class="auth-step" data-step="1">
+            <div class="field">
+              <label for="su-name">Bước 1 / 3 · Bạn muốn được gọi là gì?</label>
+              <input class="input" id="su-name" name="name" type="text" autocomplete="username" maxlength="20" placeholder="Ví dụ: Minh debug" aria-describedby="su-name-err">
+              <p class="field-hint">Từ 2 đến 20 ký tự. Tên này hiện trên thẻ thành viên.</p>
+              <p class="field-error" id="su-name-err" role="alert" hidden></p>
+            </div>
+            <div class="auth-nav"><button class="btn btn--primary" type="button" data-step-next>Tiếp tục</button></div>
+          </div>
+
+          <div class="auth-step" data-step="2" hidden>
+            <div class="field">
+              <label for="su-pass">Bước 2 / 3 · Đặt mật khẩu</label>
+              <div class="inline-field">
+                <input class="input" id="su-pass" name="pass" type="password" autocomplete="new-password" maxlength="64" aria-describedby="su-pass-msg">
+                <button class="btn btn--secondary" type="button" data-pass-toggle="su-pass" aria-pressed="false">Hiện</button>
+              </div>
+              <div class="meter" data-meter aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <p class="field-hint" id="su-pass-msg" data-meter-msg aria-live="polite">Ít nhất 6 ký tự.</p>
+            </div>
+            <div class="auth-nav"><button class="btn btn--ghost" type="button" data-step-back>Quay lại</button><button class="btn btn--primary" type="button" data-step-next>Tiếp tục</button></div>
+          </div>
+
+          <div class="auth-step" data-step="3" hidden>
+            <p class="auth-label">Bước 3 / 3 · Chọn hình đại diện và điều bạn quan tâm</p>
+            <div class="ava-pick">
+              <span class="ava-big" data-ava-preview></span>
+              <div>
+                <p class="field-hint">Hình được vẽ tự động từ một con số ngẫu nhiên.</p>
+                <button class="btn btn--secondary btn--small" type="button" data-ava-roll>Đổi kiểu khác</button>
+              </div>
+            </div>
+            <div class="chips" role="group" aria-label="Điều bạn quan tâm" data-major>
+              <button type="button" class="chip is-active" data-major-opt="Python" aria-pressed="true">Python</button>
+              <button type="button" class="chip" data-major-opt="C/C++" aria-pressed="false">C/C++</button>
+              <button type="button" class="chip" data-major-opt="Git và GitHub" aria-pressed="false">Git và GitHub</button>
+              <button type="button" class="chip" data-major-opt="Windows" aria-pressed="false">Windows</button>
+              <button type="button" class="chip" data-major-opt="Chọn laptop" aria-pressed="false">Chọn laptop</button>
+            </div>
+            <p class="field-error" data-signup-err role="alert" hidden></p>
+            <div class="auth-nav"><button class="btn btn--ghost" type="button" data-step-back>Quay lại</button><button class="btn btn--primary" type="submit">Tạo tài khoản</button></div>
+          </div>
+        </form>
+
+        <!-- Đăng ký xong -->
+        <div class="auth-done" data-auth-done hidden>
+          <p class="auth-done-k">Tài khoản đã sẵn sàng</p>
+          <h3 class="auth-done-h" tabindex="-1">Xong rồi, <span data-done-name></span></h3>
+          <p class="auth-done-t">Giờ bạn có thể đặt lịch. Mọi đơn đã đặt sẽ nằm ở trang thành viên để bạn theo dõi.</p>
+          <div class="auth-nav"><a class="btn btn--primary" href="account/index.html">Xem trang thành viên</a><button class="btn btn--secondary" type="button" data-auth-close>Tiếp tục xem web</button></div>
+        </div>
+
+        <p class="auth-note">Tài khoản mô phỏng: dữ liệu chỉ lưu trên trình duyệt này, không gửi đi đâu. Đừng dùng lại mật khẩu thật của bạn.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ===== Bảng lệnh (Ctrl + K): tìm trang, dịch vụ, lệnh nhanh (play.js điều khiển) ===== -->
+  <dialog class="cmdk" data-cmdk aria-label="Bảng lệnh">
+    <div class="cmdk-box">
+      <label class="sr-only" for="cmdk-input">Tìm trang, dịch vụ hoặc lệnh</label>
+      <input class="cmdk-input" id="cmdk-input" type="text" autocomplete="off" placeholder="Tìm trang, dịch vụ hoặc lệnh" data-cmdk-input>
+      <ul class="cmdk-list" data-cmdk-list>
+        <li><a href="index.html" data-k="trang chu home"><span>Trang chủ</span><em>Trang</em></a></li>
+        <li><a href="services/index.html" data-k="dich vu services bang gia"><span>Dịch vụ và bảng giá</span><em>Trang</em></a></li>
+        <li><a href="find-your-fix/index.html" data-k="find your fix chan doan loi"><span>Find your fix: chẩn đoán lỗi</span><em>Trang</em></a></li>
+        <li><a href="student-pack/index.html" data-k="student pack goi combo"><span>Student Pack</span><em>Trang</em></a></li>
+        <li><a href="about/index.html" data-k="about doi ngu gioi thieu"><span>Về đội ngũ</span><em>Trang</em></a></li>
+        <li><a href="contact/index.html" data-k="contact lien he zalo email"><span>Liên hệ</span><em>Trang</em></a></li>
+        <li><a href="faq/index.html" data-k="faq cau hoi thuong gap"><span>Câu hỏi thường gặp</span><em>Trang</em></a></li>
+        <li><a href="cart/index.html" data-k="gio hang cart dat lich"><span>Giỏ hàng</span><em>Trang</em></a></li>
+        <li><a href="track/index.html" data-k="theo doi don tra cuu track"><span>Theo dõi đơn</span><em>Trang</em></a></li>
+        <li><a href="account/index.html" data-k="thanh vien tai khoan don da dat lich su account"><span>Trang thành viên</span><em>Trang</em></a></li>
+        <li><a href="services/windows-rescue/index.html" data-k="windows rescue man hinh xanh cai win"><span>Windows Rescue</span><em>Dịch vụ</em></a></li>
+        <li><a href="services/python-setup/index.html" data-k="python pip venv no module named"><span>Python Environment Setup</span><em>Dịch vụ</em></a></li>
+        <li><a href="services/cpp-setup/index.html" data-k="c++ cpp g++ gcc bien dich"><span>C/C++ Development Setup</span><em>Dịch vụ</em></a></li>
+        <li><a href="services/git-github/index.html" data-k="git github ssh push"><span>Git &amp; GitHub Setup</span><em>Dịch vụ</em></a></li>
+        <li><a href="services/vscode-setup/index.html" data-k="vs code vscode extension"><span>VS Code Setup</span><em>Dịch vụ</em></a></li>
+        <li><a href="services/laptop-health/index.html" data-k="laptop health cham nong quat"><span>Laptop Health Check</span><em>Dịch vụ</em></a></li>
+        <li><a href="services/data-backup/index.html" data-k="data backup sao luu mat file"><span>Data Backup</span><em>Dịch vụ</em></a></li>
+        <li><a href="services/tech-consultation/index.html" data-k="tech consultation tu van mua laptop"><span>Tech Consultation</span><em>Dịch vụ</em></a></li>
+        <li><button type="button" data-cmd="theme" data-k="giao dien sang toi dark light theme"><span>Đổi giao diện Sáng / Tối</span><em>Lệnh</em></button></li>
+        <li><button type="button" data-cmd="chat" data-k="tro ly chatbot hoi fixit"><span>Mở trợ lý Hỏi FixIT</span><em>Lệnh</em></button></li>
+        <li><button type="button" data-cmd="account" data-k="dang nhap dang ky tai khoan login"><span>Đăng nhập hoặc đăng ký</span><em>Lệnh</em></button></li>
+      </ul>
+      <p class="cmdk-empty" data-cmdk-empty hidden>Không có kết quả phù hợp.</p>
+      <p class="cmdk-foot"><kbd>↑</kbd><kbd>↓</kbd> để chọn <kbd>Enter</kbd> để mở <kbd>Esc</kbd> để đóng</p>
+    </div>
+  </dialog>
+
+  <p class="sr-only" role="status" aria-live="polite" data-live></p>
+
+  <script src="js/main.js?v=1795065322" defer></script>
+  
+  <script src="js/chatbot.js?v=1795065322" defer></script>
+  <script src="js/account.js?v=1795065322" defer></script>
+  <script src="js/play.js?v=1795065322" defer></script>
+<script>
+(function () {
+  function packState() {
+    var raw = window.name || '';
+    if (raw.indexOf('fixit:') !== 0) return '';
+    var b64 = btoa(unescape(encodeURIComponent(raw.slice(6))));
+    return b64.replace(/[+]/g, '-').replace(/[/]/g, '_').replace(/=+$/, '');
+  }
+  function carry(e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a || !a.getAttribute('href')) return;
+    var href = a.getAttribute('href');
+    if (href.charAt(0) === '#' || /^(mailto:|tel:|javascript:|https?:)/i.test(href)) return;
+    var state = packState();
+    if (!state) return;
+    var url = new URL(href, location.href);
+    url.searchParams.set('fx', state);
+    a.setAttribute('href', url.href);
+  }
+  document.addEventListener('click', carry, true);
+  document.addEventListener('auxclick', carry, true);
+})();
+</script>
+
+</body></html>
